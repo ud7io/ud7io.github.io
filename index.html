@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UD7</title>
+  <meta charset="UTF-8">
+  <title>UD7 Giriş</title>
   <style>
     body {
       margin: 0;
       background-color: black;
       overflow: hidden;
-      font-family: 'Courier New', monospace;
     }
 
     #scene {
@@ -20,40 +18,56 @@
 
     .bow {
       position: absolute;
-      width: 100vw;
-      height: 100vh;
-      object-fit: contain;
-      animation: shoot 4s ease-out forwards;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      animation: fadeIn 2s ease-in-out;
     }
 
-    .ud7 {
+    .arrow {
+      position: absolute;
+      top: 50%;
+      left: 20%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      animation: shootArrow 4s ease-in-out forwards;
+    }
+
+    @keyframes shootArrow {
+      0% { left: 20%; opacity: 1; }
+      80% { left: 80%; opacity: 1; }
+      100% { left: 120%; opacity: 0; }
+    }
+
+    .ud7-text {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 6em;
       color: rgba(255, 255, 255, 0);
-      text-shadow: 0 0 20px #999;
-      animation: fadeInUD7 4s ease-in-out forwards;
-      animation-delay: 3.5s;
+      text-shadow: 0 0 40px #fff;
+      animation: fadeInText 3s ease-in-out forwards;
+      animation-delay: 4s;
     }
 
-    @keyframes shoot {
-      0% { left: 11%; opacity: 1; }
-      70% { left: 80%; opacity: 1; }
-      100% { left: 120%; opacity: 0; }
+    @keyframes fadeInText {
+      from { color: rgba(255, 255, 255, 0); }
+      to { color: rgba(255, 255, 255, 1); }
     }
 
-    @keyframes fadeInUD7 {
-      from { color: rgba(255,255,255,0); text-shadow: 0 0 0 #000; }
-      to { color: rgba(255,255,255,1); text-shadow: 0 0 30px #ccc; }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
 <body>
   <div id="scene">
-    <img src="yay.PNG" alt="Bow" class="bow" />
-    <div class="ud7">UD7</div>
+    <img src="yay.PNG" alt="Bow" class="bow">
+    <img src="yay.PNG" alt="Arrow" class="arrow">
+    <div class="ud7-text">UD7</div>
   </div>
 </body>
 </html>
