@@ -1,73 +1,30 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>UD7 Giriş</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UD7 Video</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       background-color: black;
       overflow: hidden;
-    }
-
-    #scene {
-      position: relative;
-      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
     }
-
-    .bow {
-      position: absolute;
-      top: 50%;
-      left: 20%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      left: 20%;
-      transform: translate(-50%, -50%);
-      width: 300px;
-      animation: shootArrow 4s ease-in-out forwards;
-    }
-
-    @keyframes shootArrow {
-      0% { left: 20%; opacity: 1; }
-      80% { left: 80%; opacity: 1; }
-      100% { left: 120%; opacity: 0; }
-    }
-
-    .ud7-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 6em;
-      color: rgba(255, 255, 255, 0);
-      text-shadow: 0 0 40px #fff;
-      animation: fadeInText 3s ease-in-out forwards;
-      animation-delay: 4s;
-    }
-
-    @keyframes fadeInText {
-      from { color: rgba(255, 255, 255, 0); }
-      to { color: rgba(255, 255, 255, 1); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    video {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
     }
   </style>
 </head>
 <body>
-  <div id="scene">
-    <img src="yay.PNG" alt="Bow" class="bow">
-    <img src="yay.PNG" alt="Arrow" class="arrow">
-    <div class="ud7-text">UD7</div>
-  </div>
+  <video src="videos.MP4" autoplay playsinline muted="false" controls="false" oncanplay="this.muted = false; this.volume = 1; this.play();" ></video>
 </body>
 </html>
