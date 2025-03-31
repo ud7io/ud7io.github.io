@@ -2,52 +2,38 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>UD7 Galaksisi</title>
+  <title>UD7'nin Galaksisi</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      font-family: 'Courier New', monospace;
+      background-color: black;
+      background-image: url('https://ud7io.github.io/940942e0d70192dfdfc16634cd929cc5.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       color: #00ffcc;
+      font-family: 'Courier New', monospace;
       text-align: center;
-      overflow: hidden;
+      padding-top: 100px;
     }
 
     h1 {
-      margin-top: 20vh;
-      font-size: 40px;
-      animation: parlayan 1.5s infinite alternate;
-    }
-
-    p {
-      font-size: 18px;
-      opacity: 0.6;
+      font-size: 48px;
+      animation: parlayan 2s infinite alternate;
     }
 
     @keyframes parlayan {
       from { text-shadow: 0 0 10px #00ffcc; }
-      to   { text-shadow: 0 0 30px #00ffff, 0 0 60px #00ffff; }
+      to   { text-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc; }
     }
 
-    .stars {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: transparent url('https://media.giphy.com/media/l0HlPjezGYl6iLzRm/giphy.gif') repeat;
-      z-index: -1;
-      animation: kaydir 100s linear infinite;
-      opacity: 0.1;
-    }
-
-    @keyframes kaydir {
-      from { background-position: 0 0; }
-      to { background-position: 10000px 10000px; }
+    p {
+      margin-top: 20px;
+      font-size: 18px;
+      opacity: 0.8;
     }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
   <h1>UD7 Galaksiye Hoş Geldin!</h1>
   <p>Yıldızların ötesinde senin sesin yankılanıyor...</p>
 </body>
