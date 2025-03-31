@@ -2,53 +2,76 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>UD7 Giriş</title>
+  <title>UD7 Galaksi Girişi</title>
   <style>
     body {
-      margin: 0;
       background-color: black;
-      color: white;
-      text-align: center;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #00ffcc;
+      font-family: 'Courier New', monospace;
     }
-    #options {
-      display: none;
-      margin-top: 20px;
+
+    #startButton {
+      padding: 20px 40px;
+      font-size: 22px;
+      background: transparent;
+      border: 2px solid #00ffcc;
+      color: #00ffcc;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      text-shadow: 0 0 10px #00ffcc;
+      animation: pulse 2s infinite alternate, glitch 1.5s infinite;
     }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00ffcc; }
+      100% { box-shadow: 0 0 40px #00ffcc; }
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0, 0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(2px, -1px); }
+      60% { transform: translate(-1px, 2px); }
+      80% { transform: translate(1px, -2px); }
+      100% { transform: translate(0, 0); }
+    }
+
     video {
-      width: 100%;
-      height: auto;
-    }
-    button {
-      padding: 10px 20px;
-      margin: 10px;
-      font-size: 18px;
+      display: none;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <video id="intro" autoplay muted playsinline>
+
+  <button id="startButton">GİRİŞ YAP</button>
+
+  <video id="intro" controls>
     <source src="copy_BF60361B-B1F7-480A-B053-837739715743.mov" type="video/mp4">
     Tarayıcınız video etiketini desteklemiyor.
   </video>
 
-  <div id="options">
-    <button onclick="playVideo('video1.mp4')">Seçenek 1</button>
-    <button onclick="playVideo('video2.mp4')">Seçenek 2</button>
-  </div>
-
   <script>
-    const video = document.getElementById('intro');
-    const options = document.getElementById('options');
+    const btn = document.getElementById("startButton");
+    const video = document.getElementById("intro");
 
-    video.onended = () => {
-      options.style.display = 'block';
-    };
-
-    function playVideo(file) {
-      video.src = file;
+    btn.addEventListener("click", () => {
+      btn.style.display = "none";
+      video.style.display = "block";
       video.play();
-      options.style.display = 'none';
-    }
+    });
   </script>
+
 </body>
 </html>
