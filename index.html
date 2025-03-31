@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>UD7 Giriş</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+    #options {
+      display: none;
+      margin-top: 20px;
+    }
+    video {
+      width: 100%;
+      height: auto;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <video id="intro" autoplay muted playsinline>
+    <source src="copy_BF60361B-B1F7-480A-B053-837739715743.mov" type="video/mp4">
+    Tarayıcınız video etiketini desteklemiyor.
+  </video>
+
+  <div id="options">
+    <button onclick="playVideo('video1.mp4')">Seçenek 1</button>
+    <button onclick="playVideo('video2.mp4')">Seçenek 2</button>
+  </div>
+
+  <script>
+    const video = document.getElementById('intro');
+    const options = document.getElementById('options');
+
+    video.onended = () => {
+      options.style.display = 'block';
+    };
+
+    function playVideo(file) {
+      video.src = file;
+      video.play();
+      options.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
