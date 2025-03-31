@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>UD7 Giriş</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background-color: black;
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-    }
-    video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UD7 - Profil</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <video autoplay playsinline controls>
-    <source src="videos.MP4" type="video/mp4">
-    Tarayıcınız video etiketini desteklemiyor.
-  </video>
+  <div class="cover">
+    <img src="Kapak.PNG" alt="Kapak Fotoğrafı">
+  </div>
+
+  <div class="profile-section">
+    <img src="Profil.jpg" alt="Profil Fotoğrafı" class="profile-pic">
+    <div class="name-area">
+      <h1>y <img src="verified.png" alt="Onaylı" class="verified-icon" onclick="togglePopup()"></h1>
+      <p class="username">@UD7</p>
+    </div>
+  </div>
+
+  <p class="bio">THEDESIGNEROFINNOCENCEISTHEONEWHOGIVESMEANINGEVENTOSILENCE</p>
+
+  <div class="info">
+    <span>UI Tasarımcısı</span> • <span>Nisan 2010 tarihinde katıldı</span>
+  </div>
+
+  <div class="popup" id="popup">
+    <p><img src="verified.png" class="popup-icon"> Bu hesap onaylı.</p>
+    <p class="desc">Bu hesabın kimliği onaylandı.</p>
+    <p class="desc">Mart 2025 tarihinden bu yana onaylı.</p>
+    <button onclick="togglePopup()">Kapat</button>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
