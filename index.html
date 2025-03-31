@@ -1,77 +1,59 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>UD7 Galaksi Girişi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UD7</title>
   <style>
     body {
-      background-color: black;
       margin: 0;
+      background-color: black;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #00ffcc;
       font-family: 'Courier New', monospace;
     }
 
-    #startButton {
-      padding: 20px 40px;
-      font-size: 22px;
-      background: transparent;
-      border: 2px solid #00ffcc;
-      color: #00ffcc;
-      border-radius: 8px;
-      cursor: pointer;
+    #scene {
       position: relative;
-      z-index: 10;
-      text-shadow: 0 0 10px #00ffcc;
-      animation: pulse 2s infinite alternate, glitch 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0% { box-shadow: 0 0 10px #00ffcc; }
-      100% { box-shadow: 0 0 40px #00ffcc; }
-    }
-
-    @keyframes glitch {
-      0% { transform: translate(0, 0); }
-      20% { transform: translate(-1px, 1px); }
-      40% { transform: translate(2px, -1px); }
-      60% { transform: translate(-1px, 2px); }
-      80% { transform: translate(1px, -2px); }
-      100% { transform: translate(0, 0); }
-    }
-
-    video {
-      display: none;
       width: 100vw;
       height: 100vh;
-      object-fit: cover;
+    }
+
+    .bow {
+      position: absolute;
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+      animation: shoot 4s ease-out forwards;
+    }
+
+    .ud7 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 6em;
+      color: rgba(255, 255, 255, 0);
+      text-shadow: 0 0 20px #999;
+      animation: fadeInUD7 4s ease-in-out forwards;
+      animation-delay: 3.5s;
+    }
+
+    @keyframes shoot {
+      0% { left: 11%; opacity: 1; }
+      70% { left: 80%; opacity: 1; }
+      100% { left: 120%; opacity: 0; }
+    }
+
+    @keyframes fadeInUD7 {
+      from { color: rgba(255,255,255,0); text-shadow: 0 0 0 #000; }
+      to { color: rgba(255,255,255,1); text-shadow: 0 0 30px #ccc; }
     }
   </style>
 </head>
 <body>
-
-  <button id="startButton">GİRİŞ YAP</button>
-
-  <video id="intro" controls>
-    <source src="copy_BF60361B-B1F7-480A-B053-837739715743.mov" type="video/mp4">
-    Tarayıcınız video etiketini desteklemiyor.
-  </video>
-
-  <script>
-    const btn = document.getElementById("startButton");
-    const video = document.getElementById("intro");
-
-    btn.addEventListener("click", () => {
-      btn.style.display = "none";
-      video.style.display = "block";
-      video.play();
-    });
-  </script>
-
+  <div id="scene">
+    <img src="yay.PNG" alt="Bow" class="bow" />
+    <div class="ud7">UD7</div>
+  </div>
 </body>
 </html>
