@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UD7 Video</title>
+  <meta charset="UTF-8">
+  <title>UD7 Giriş</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     html, body {
       margin: 0;
       padding: 0;
       background-color: black;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       height: 100vh;
+      width: 100vw;
     }
     video {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <video src="videos.MP4" autoplay playsinline muted="false" controls="false" oncanplay="this.muted = false; this.volume = 1; this.play();" ></video>
+  <video autoplay playsinline controls>
+    <source src="videos.MP4" type="video/mp4">
+    Tarayıcınız video etiketini desteklemiyor.
+  </video>
 </body>
 </html>
